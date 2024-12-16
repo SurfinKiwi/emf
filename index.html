@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromagnetic Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>⚡ Electromagnetic Simulator ⚡</h1>
+            <p>Visualize the Lorentz Force and understand its impact on charged particles.</p>
+        </div>
+        <div class="header-gif">
+            <img src="EMF.gif" alt="Physics Simulation GIF">
+        </div>
+    </header>
+
+    <section class="explanation">
+        <h2>The Physics Behind the Simulator</h2>
+        <p>
+            The motion of a charged particle in a magnetic field is governed by the <strong>Lorentz Force</strong>,
+            given by the equation:
+        </p>
+        <div class="formula">F = q(E + v × B)</div>
+        <p>
+            Since we are assuming no electric field (<strong>E = 0</strong>), the equation simplifies to:
+        </p>
+        <div class="formula">F = q(v × B)</div>
+        <p>
+            In this simulation, <strong>q</strong> represents the charge of the particle in Coulombs, <strong>v</strong>
+            represents the velocity of the particle in meters per second (m/s), and <strong>B</strong> represents the
+            magnetic field in Tesla.
+        </p>
+        <p>
+            The Lorentz Force is always perpendicular to the particle's velocity, causing the particle to follow a
+            circular path. The radius of the circular motion depends on the particle's speed and the magnetic field
+            strength. It is given by:
+        </p>
+        <div class="formula">r = (m × v) / (q × B)</div>
+        <p>Here, <strong>m</strong> represents the mass of the particle.</p>
+
+        <h3>Simulation Key:</h3>
+        <p>
+            The yellow dot represents the charged particle affected by the Lorentz Force. It moves in a circular path
+            determined by the force, and its position is dynamically updated based on the equations of motion.
+        </p>
+        <p>
+            The red line represents the instantaneous velocity of the particle. The line is tangent to the circular
+            path, and its direction changes continuously as the particle moves, reflecting the constant change in
+            velocity direction due to the magnetic force.
+        </p>
+    </section>
+
+    <div class="controls">
+        <label>
+            <span>Charge (q):</span>
+            <input id="chargeInput" type="number" step="0.1" value="1"> C
+        </label>
+        <label>
+            <span>Velocity (v):</span>
+            <input id="velocityInput" type="number" step="1" value="5"> m/s
+        </label>
+        <label>
+            <span>Magnetic Field (B):</span>
+            <input id="fieldInput" type="number" step="0.1" value="2"> T
+        </label>
+        <button id="resetButton">Reset</button>
+    </div>
+
+    <canvas id="simulationCanvas"></canvas>
+
+    <footer>
+        <p>&copy; Physics 196 Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
